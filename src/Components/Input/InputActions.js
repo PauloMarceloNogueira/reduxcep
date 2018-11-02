@@ -17,6 +17,13 @@ const getCepError = (response) => {
 }
 
 const cep_changed = (e) => {
+  return {
+    type: 'CEP_CHANGED',
+    payload: e.target.value
+  }
+}
+
+const cep_searched = (e) => {
   return (dispatch) => {
     axios.get(`${URL}/${e.target.value}/json`)
       .then((response) => {
@@ -28,4 +35,4 @@ const cep_changed = (e) => {
   } 
 }
 
-export {cep_changed};
+export {cep_changed, cep_searched};

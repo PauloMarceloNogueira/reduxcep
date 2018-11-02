@@ -2,6 +2,11 @@ const INITIAL_STATE = { };
 
 export default (state = {}, action) => {
   switch(action.type) {
+    case 'CEP_CHANGED': 
+      return {
+        ...state,
+        value: action.payload
+      }
     case 'CEP_SEARCH':
       return { ...state, 
         logradouro: action.payload.data.logradouro,
