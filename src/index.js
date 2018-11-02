@@ -1,18 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
 import './index.sass';
 
 // Components
-import Header from './Components/Header/Header.jsx';
-import Map from './Components/Map/Map.jsx';
+import Input from './Components/Input/Input.jsx';
+import InputReducer from './Components/Input/InputReducer.js';
+import Map from './Components/Map/map.jsx';
 
-const Index = () => 
-(
-  <div className="content">
-    <h3>Consulta de endereço</h3>
-    <Header />
-    <Map />
-  </div>
-);
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const reducers = combineReducers({
+  input: InputReducer
+})
+const store = applyMiddleware(thunk)(createStore)(reducers, devTools);
 
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(
+  <Provider store={store}>
+    <div>
+      <Input />
+      <Map />
+    </div>
+  </Provider>
+, document.getElementById('index'));

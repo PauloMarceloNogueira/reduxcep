@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {cep_changed} from './InputActions';
+import { bindActionCreators } from 'redux';
 
-const Input = () => (
-  <input type="text" />
-)
+class Input extends Component {
 
-export default Input;
+  render() {
+    return (
+      <div>
+        <input type="text" placeholder="Digite o cep" onChange={this.props.cep_changed} value={this.props.cep}/>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = (state) => ({value: state.input.logradouro});
+const mapDispatchToProps = (dispatch) => bindActionCreators({ cep_changed }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Input)
