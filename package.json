@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "App to find cep data",
   "main": "index.js",
+  "homepage": "https://paulomarcelonogueira.github.io/reduxcep/",
   "scripts": {
     "test": "run-test",
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Paulo Marcelo <paulomarceloa.nogueira@gmail.com>",
   "license": "ISC",
@@ -18,6 +21,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^1.0.1",
+    "gh-pages": "^2.0.1",
     "html-webpack-plugin": "^3.2.0",
     "i": "^0.3.6",
     "react-redux": "^5.1.0",
