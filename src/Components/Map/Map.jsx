@@ -5,14 +5,13 @@ import { cep_changed } from '../Input/InputActions.js';
 import { closed_click } from './MapActions.js';
 
 import './Map.sass';
-
 import FrameMap from './FrameMap.jsx';
 
 const Map = (props) => {
   console.log(props, 'PROPS')
   return (
     <div className={`map-container ${props.closed_card ? 'hidden' : 'visible'}`}>
-      <div className="close-container" onClick={props.closed_click}>x</div>
+      <div className="close-container" onClick={props.closed_click}></div>
       <div>
         <p className="street">
           {props.logradouro}
@@ -20,8 +19,8 @@ const Map = (props) => {
         <p className="district">{props.bairro}</p>
         <p className="city">{props.localidade}</p>
         <p className="zipcode">{props.cep}</p>
-        <FrameMap />
       </div>
+      <FrameMap />
     </div>
   )
 };

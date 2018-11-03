@@ -11,6 +11,18 @@ module.exports = {
         }
       },
       {
+        test: /\.svg$/,
+        loaders: [
+          'babel-loader',
+          {
+            loader: 'react-svg-loader',
+            query: {
+              jsx: true
+            }
+          },
+        ]
+      },
+      {
         test: /\.(?:sa|sc|c)ss$/,
         use: [
           {
@@ -23,6 +35,10 @@ module.exports = {
             loader: require.resolve('sass-loader'),
           }
         ]
+      },
+      {
+        test: /\.(gif|svg|jpg|png)$/,
+        loader: "file-loader",
       }
     ]
   },
