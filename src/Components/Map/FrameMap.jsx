@@ -2,11 +2,10 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { cep_changed } from '../Input/InputActions.js'
-
+import './Map.sass'
 const FrameMap = (props) => {
-  console.log(props, 'PROPS')
   return (
-    <div>
+    <div className="map-frame">
       <iframe width='100%' height='350' frameBorder='0'  
         scrolling='no' marginHeight='0' marginWidth='0'    
         src={`https://maps.google.com/maps?q=${props.logradouro}&output=embed`}></iframe>

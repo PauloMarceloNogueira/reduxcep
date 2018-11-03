@@ -8,11 +8,10 @@ import './Map.sass';
 import FrameMap from './FrameMap.jsx';
 
 const Map = (props) => {
-  console.log(props, 'PROPS')
   return (
     <div className={`map-container ${props.closed_card ? 'hidden' : 'visible'}`}>
       <div className="close-container" onClick={props.closed_click}></div>
-      <div>
+      <div className="data-container">
         <p className="street">
           {props.logradouro}
         </p>

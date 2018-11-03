@@ -1,14 +1,22 @@
 
+@media screen and (max-width: 400px)
+  .map-container
+    width: 100%
+@media screen and (min-width: 400px)
+  .map-container
+    width: 50%
 .map-container
-  width: 50%
-  margin-left: 25%
-  padding: 30px
   border: 1px solid #cecccc
-  margin-top: 25px
-  text-align: left
-  display: flex
-  flex-direction: column
-  flex-wrap: wrap
+  display: table
+  margin-left: auto
+  margin-right: auto
+  margin-top: 15px
+  -webkit-box-shadow: 1px 3px 43px -11px rgba(0,0,0,0.39)
+  -moz-box-shadow: 1px 3px 43px -11px rgba(0,0,0,0.39)
+  box-shadow: 1px 3px 43px -11px rgba(0,0,0,0.39)
+  
+  .data-container
+    padding-left: 20px
   .street
     font-weight: bold
     font-size: 20px
@@ -27,3 +35,5 @@
 
 .map-container.collapsed
   height: 0px
+.map-frame
+  padding: 20px
