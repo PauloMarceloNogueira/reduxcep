@@ -1,5 +1,3 @@
-const INITIAL_STATE = { };
-
 export default (state = {}, action) => {
   switch(action.type) {
     case 'CEP_CHANGED': 
