@@ -21,6 +21,9 @@ ReactDOM.render(
     <div>
       <Header />
       <Map />
+      <footer>
+        paulo marcelo a. nogueira 2018 - <a href="https://github.com/PauloMarceloNogueira/reduxcep" target="blank"> github</a>
+      </footer>
     </div>
   </Provider>
 , document.getElementById('index'));
