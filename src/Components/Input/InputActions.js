@@ -24,8 +24,8 @@ const cep_changed = (e) => {
 }
 
 const cep_searched = (e) => {
-  return (dispatch) => {
-    axios.get(`${URL}/${e.target.value}/json`)
+  return (dispatch, getState) => {
+    axios.get(`${URL}/${getState().input.value}/json`)
       .then((response) => {
         dispatch(cep_success(response));
       })

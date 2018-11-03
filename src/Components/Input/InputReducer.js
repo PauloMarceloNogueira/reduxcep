@@ -13,18 +13,20 @@ export default (state = {}, action) => {
         cep: action.payload.data.cep,
         bairro: action.payload.data.bairro,
         localidade: action.payload.data.localidade,
-        uf: action.payload.data.uf
-        
+        uf: action.payload.data.uf,
+        closed_card: false
       }
     case 'CEP_ERROR':
-    return { 
-      ...state, 
-      logradouro: '', 
-      cep: '', 
-      bairro: '', 
-      localidade: '', 
-      uf: '', 
-      error: action.payload }  
+      return { 
+        ...state, 
+        logradouro: '', 
+        cep: '', 
+        bairro: '', 
+        localidade: '', 
+        uf: '', 
+        error: action.payload }
+    case 'CLOSED_CARD':
+      return { ...state, closed_card: action.payload }
     default:
       return state;
   }
