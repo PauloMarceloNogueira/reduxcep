@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Paulo Marcelo <paulomarceloa.nogueira@gmail.com>",
   "license": "ISC",
