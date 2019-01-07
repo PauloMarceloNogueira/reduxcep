@@ -8,7 +8,7 @@ import './index.sass';
 
 // Components
 import Header from './Components/Header/Header.jsx'
-import Map from './Components/Map/map.jsx';
+import Map from './Components/Map/Map.jsx';
 import InputReducer from './Reducers/Reducers.js'
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const reducers = combineReducers({
